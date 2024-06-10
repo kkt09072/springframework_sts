@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 빈 객체 생성 NoArgument -->
+	<bean id="store1" class="com.spring1.dto.Store"></bean>
+	
+	<!--		Store store1 = new Store();	 -->
+	
+	<!-- 생성자 주입 : All Argument -->
+	<bean id="store2" class="com.spring1.dto.Store">
+		<constructor-arg name="storeNum" value="1"></constructor-arg>
+		<constructor-arg name="storeName" value="HomePlus"></constructor-arg>
+	</bean> 
+	
+	<!--		Store store2 = new Store(1, "HomePlus");	 -->
+	
+	<!-- 생성자(Constructor) 주입2 : All Argument - value -->
+	<bean id="store3" class="com.spring1.dto.Store">
+		<constructor-arg name="storeNum">
+			<value>2</value>
+		</constructor-arg>
+		<constructor-arg name="storeName">
+			<value>KingMart</value>
+		</constructor-arg>
+	</bean>
+	
+	<!--		Store store3 = new Store(2, "KingMart");	-->
+	
+	<!--  수정자 주입(setter injection) -->		
+	<bean id="store4" class="com.spring1.dto.Store">
+		<property name="storeNum" value="3"></property>
+		<property name="storeName" value="EMart"></property>
+	</bean>		
+	
+	<!--
+		Store store4 = new Store();
+		store4.setStoreNum(1);
+		store4.setStoreName("HomePlus"); 
+	 -->
+</beans>

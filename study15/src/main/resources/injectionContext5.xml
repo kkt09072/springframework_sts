@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="apple" class="com.spring1.dto.Apple">
+		<constructor-arg name="price" value="5000" />
+	</bean>
+	<bean id="mango" class="com.spring1.dto.Mango">
+		<constructor-arg name="size" value="400" />
+	</bean>
+	<bean id="cherry" class="com.spring1.dto.Cherry">
+		<constructor-arg name="amount" value="900" />
+	</bean>
+	<bean id="ware2" class="com.spring1.dto.Warehouse">
+		<property name="map">
+			<map>
+				<entry>
+					<key><value>martName</value></key>
+					<value>EMart</value>
+				</entry>
+				<entry key="no" value="1004" value-type="int"></entry>
+				<entry>
+					<key><value>apple</value></key>
+					<ref bean="apple"/>
+				</entry>
+				<entry>
+					<key><value>mango</value></key>
+					<ref bean="mango"/>
+				</entry>
+				<entry>
+					<key><value>cherry</value></key>
+					<ref bean="cherry"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

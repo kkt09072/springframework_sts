@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stage">
+	<select id="getStoreList" resultType="com.spring1.dto.Store">
+		select * from stage
+	</select>	
+	<select id="getStore" resultType="com.spring1.dto.Store">
+		select * from stage where storenum=#{storeNum}
+	</select>
+	<select id="maxNum" resultType="int">
+		select storenum from (select * from stage order by storenum desc) where rownum=1
+	</select>
+	<!--  최근 마지막 번호(MySQL/MariaDB/PostGres) : select num from sample order by num desc limit 1; -->
+	<insert id="insStore">
+		insert into stage values (#{storeNum}, #{storeName})
+	</insert>
+	<update id="upStore">
+		update stage set storename=#{storeName} where storenum=#{storeNum}
+	</update>
+	<delete id="delStore">
+		delete from stage where storenum=#{storeNum}
+	</delete>
+</mapper>

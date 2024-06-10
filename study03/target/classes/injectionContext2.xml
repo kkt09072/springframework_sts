@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="pencil" class="com.spring1.dto.Pencil">
+		<constructor-arg name="proName">
+			<value>A001</value>
+		</constructor-arg>
+		<constructor-arg name="price" value="1000" />
+	</bean>
+	
+	<!-- 생성자 주입 -->
+	<bean id="shop1" class="com.spring1.dto.Shop">
+		<constructor-arg name="shopName" value="Daeil"></constructor-arg>
+		<constructor-arg name="product" ref="pencil"></constructor-arg>
+	</bean>
+	
+	<!-- 수정자 주입 -->
+	<bean id="shop2" class="com.spring1.dto.Shop">
+		<property name="shopName" value="YoungPoong"></property>
+		<property name="product" ref="pencil"></property>	
+	</bean>
+	
+	<!-- 생성자 주입2 -->
+	<bean id="shop3" class="com.spring1.dto.Shop">
+		<constructor-arg name="shopName">
+			<value>Kyobo</value>
+		</constructor-arg>
+		<constructor-arg name="product">
+			<ref bean="pencil" />
+		</constructor-arg>
+	</bean>
+</beans>

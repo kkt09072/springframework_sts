@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="desk" class="com.spring1.dto.Desk">
+		<constructor-arg name="size" value="10"></constructor-arg>
+	</bean>
+	<bean id="chair" class="com.spring1.dto.Chair">
+		<property name="price" value="50000"></property>
+	</bean>
+	<bean id="market1" class="com.spring1.dto.Market">
+		<property name="marketName" value="Sun"></property>
+		<property name="goodsList">
+			<list>
+				<ref bean="chair" />
+				<ref bean="desk" />
+				<bean class="com.spring1.dto.Desk">
+					<constructor-arg name="size" value="4"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

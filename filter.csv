@@ -1,0 +1,119 @@
+﻿,필터,
+,색상 조정 필터,
+![ChannelMixFilter](../images/ChannelMixFilter.jpg),ChannelMixFilter, RGB 채널을 혼합합니다.
+![ContrastFilter](../images/ContrastFilter.jpg),ContrastFilter, 밝기와 대비를 조정합니다.
+![CurvesFilter](../images/CurvesFilter.jpg),CurvesFilter, 이미지에 조정 곡선 적용
+![DiffusionFilter](../images/DiffusionFilter.jpg),DiffusionFilter, 오류 확산 디더링
+![DitherFilter](../images/DitherFilter.jpg),DitherFilter, 순서가 지정된 디더링
+![ExposureFilter](../images/ExposureFilter.jpg),ExposureFilter, 이미지 노출 변경
+![GainFilter](../images/GainFilter.jpg),GainFilter, 게인 및 바이어스 조정
+![GammaFilter](../images/GammaFilter.jpg),GammaFilter, 이미지 감마 조정
+![GrayFilter](../images/GrayFilter.jpg),GrayFilter, 이미지를 회색으로 표시합니다.
+![GrayscaleFilter](../images/GrayscaleFilter.jpg),GrayscaleFilter, 회색조로 변환합니다.
+![HSBAdjustFilter](../images/HSBAdjustFilter.jpg),HSBAdjustFilter," 색조, 채도 및 밝기를 조정합니다."
+![InvertAlphaFilter](../images/InvertAlphaFilter.jpg),InvertAlphaFilter, 알파 채널을 반전시킵니다.
+![InvertFilter](../images/InvertFilter.jpg),InvertFilter, 이미지 색상을 반전시킵니다.
+![LevelsFilter](../images/LevelsFilter.jpg),LevelsFilter, 이미지 레벨 조정
+![LookupFilter](../images/LookupFilter.jpg),LookupFilter, 조회 테이블을 사용하여 이미지 색상 변경
+![MapColorsFilter](../images/MapColorsFilter.jpg),MapColorsFilter, 색상 바꾸기
+![MaskFilter](../images/MaskFilter.jpg),MaskFilter, 채널 마스킹
+![PosterizeFilter](../images/PosterizeFilter.jpg),PosterizeFilter, 포스터화
+![QuantizeFilter](../images/QuantizeFilter.jpg),QuantizeFilter, GIF 내보내기 등을 위해 이미지를 256색으로 양자화합니다.
+![RescaleFilter](../images/RescaleFilter.jpg),RescaleFilter, 색상에 배율을 곱합니다.
+![RGBAdjustFilter](../images/RGBAdjustFilter.jpg),RGBAdjustFilter," 빨간색, 녹색 및 파란색 레벨을 조정합니다."
+![SolarizeFilter](../images/SolarizeFilter.jpg),SolarizeFilter, 솔라리제이션
+![ThresholdFilter](../images/ThresholdFilter.jpg),ThresholdFilter, 임계값
+![TritoneFilter](../images/TritoneFilter.jpg),TritoneFilter, 삼중톤 이미지 만들기
+,왜곡 및 워핑 필터,
+![BicubicScaleFilter](../images/BicubicScaleFilter.jpg),BicubicScaleFilter, 쌍삼차 보간을 사용한 크기 조정
+![CircleFilter](../images/CircleFilter.jpg),CircleFilter, 원 주위에 이미지 감싸기
+![CropFilter](../images/CropFilter.jpg),CropFilter, 이미지에서 영역 자르기
+![DiffuseFilter](../images/DiffuseFilter.jpg),DiffuseFilter, 이미지의 픽셀을 확산시킵니다.
+![DisplaceFilter](../images/DisplaceFilter.jpg),DisplaceFilter, 유리 왜곡 효과
+![DissolveFilter](../images/DissolveFilter.jpg),DissolveFilter, 임의의 픽셀을 투명하게 만들어 이미지를 용해합니다.
+![FieldWarpFilter](../images/FieldWarpFilter.jpg),FieldWarpFilter, 필드 워프 알고리즘을 사용하여 이미지 워프
+![FlipFilter](../images/FlipFilter.jpg),FlipFilter, 이미지 뒤집기 및 회전
+![KaleidscopeFilter](../images/KaleidscopeFilter.jpg),KaleidscopeFilter, 만화경 효과
+![MarbleFilter](../images/MarbleFilter.jpg),MarbleFilter, 마블링 효과
+![MirrorFilter](../images/MirrorFilter.jpg),MirrorFilter, 이미지 미러링
+![OffsetFilter](../images/OffsetFilter.jpg),OffsetFilter, 타일링을 위해 이미지 오프셋
+![PerspectiveFilter](../images/PerspectiveFilter.jpg),PerspectiveFilter, 원근 왜곡
+![PinchFilter](../images/PinchFilter.jpg),PinchFilter, 소용돌이 핀치 왜곡
+![PolarFilter](../images/PolarFilter.jpg),PolarFilter, 극좌표 간 변환
+![RippleFilter](../images/RippleFilter.jpg),RippleFilter, 잔물결 왜곡
+![RotateFilter](../images/RotateFilter.jpg),RotateFilter, 이미지 회전
+![ScaleFilter](../images/ScaleFilter.jpg),ScaleFilter, 영역 평균화를 사용하여 이미지 크기 조정
+![ShearFilter](../images/ShearFilter.jpg),ShearFilter, 이미지 자르기
+![SphereFilter](../images/SphereFilter.jpg),SphereFilter, 렌즈 왜곡
+![SwimFilter](../images/SwimFilter.jpg),SwimFilter," ""수중"" 왜곡 효과"
+![TileImageFilter](../images/TileImageFilter.jpg),TileImageFilter, 이미지를 더 큰 이미지로 타일링
+![TwirlFilter](../images/TwirlFilter.jpg),TwirlFilter, 비틀어 이미지를 왜곡합니다.
+![WarpFilter](../images/WarpFilter.jpg),WarpFilter, 일반 그리드 이미지 워프
+![WaterFilter](../images/WaterFilter.jpg),WaterFilter, 물 잔물결 시뮬레이션
+,효과 필터,
+![BlockFilter](../images/BlockFilter.jpg),BlockFilter, 이미지를 모자이크하거나 픽셀화합니다.
+![BorderFilter](../images/BorderFilter.jpg),BorderFilter, 테두리 추가
+![ChromeFilter](../images/ChromeFilter.jpg),ChromeFilter, 크롬 시뮬레이션
+![ColorHalftoneFilter](../images/ColorHalftoneFilter.jpg),ColorHalftoneFilter, 색상 하프톤 효과입니다.
+![CrystallizeFilter](../images/CrystallizeFilter.jpg),CrystallizeFilter, 이미지를 스테인드 글라스처럼 보이게 만듭니다.
+![EmbossFilter](../images/EmbossFilter.jpg),EmbossFilter, 단순 엠보싱
+![FeedbackFilter](../images/FeedbackFilter.jpg),FeedbackFilter, 비디오 피드백 효과
+![HalftoneFilter](../images/HalftoneFilter.jpg),HalftoneFilter, 단순 하프톤
+![LightFilter](../images/LightFilter.jpg),LightFilter, 범프 매핑된 이미지에서 조명 시뮬레이션
+![NoiseFilter](../images/NoiseFilter.jpg),NoiseFilter, 노이즈 추가
+![PointillizeFilter](../images/PointillizeFilter.jpg),PointillizeFilter, 이미지를 컬러 점으로 그립니다.
+![ShadowFilter](../images/ShadowFilter.jpg),ShadowFilter, 그림자 만들기
+![ShapeFilter](../images/ShapeFilter.jpg),ShapeFilter, 조명용 범프 맵 생성
+![StampFilter](../images/StampFilter.jpg),StampFilter, 고무 도장 효과
+![WeaveFilter](../images/WeaveFilter.jpg),WeaveFilter, 직조된 이미지 효과
+,텍스처링 필터,
+![BrushedMetalFilter](../images/BrushedMetalFilter.jpg),BrushedMetalFilter, 브러시드 금속 생성
+![CausticsFilter](../images/CausticsFilter.jpg),CausticsFilter, 수중 화선 시뮬레이션
+![CellularFilter](../images/CellularFilter.jpg),CellularFilter, 셀룰러 텍스처링
+![CheckFilter](../images/CheckFilter.jpg),CheckFilter, 체커보드 패턴 그리기
+![FBMFilter](../images/FBMFilter.jpg),FBMFilter, 프랙탈 브라운 모션 텍스처링
+![FillFilter](../images/FillFilter.jpg),FillFilter, 이미지를 색상으로 채웁니다.
+![FlareFilter](../images/FlareFilter.jpg),FlareFilter, 렌즈 플레어 생성
+![FourColorFilter](../images/FourColorFilter.jpg),FourColorFilter, 4색 그라데이션 그리기
+![GradientFilter](../images/GradientFilter.jpg),GradientFilter," 방사형, 선형, 부채꼴 및 사각형 그라데이션 그리기"
+![PlasmaFilter](../images/PlasmaFilter.jpg),PlasmaFilter, 플라즈마 생성
+![TextureFilter](../images/TextureFilter.jpg),TextureFilter, Perlin 노이즈 텍스처링
+![ScratchFilter](../images/ScratchFilter.jpg),ScratchFilter, 선 또는 스크래치 렌더링
+![SmearFilter](../images/SmearFilter.jpg),SmearFilter, 페인팅 효과
+![SparkleFilter](../images/SparkleFilter.jpg),SparkleFilter, 반짝임 렌더링
+![WoodFilter](../images/WoodFilter.jpg),WoodFilter, 나무 질감 만들기
+,흐리게 하고 선명하게 하는 필터,
+![BlurFilter](../images/BlurFilter.jpg),BlurFilter, 단순 흐림
+![BoxBlurFilter](../images/BoxBlurFilter.jpg),BoxBlurFilter, 상자 흐림
+![BumpFilter](../images/BumpFilter.jpg),BumpFilter, 가장자리 엠보싱
+![ConvolveFilter](../images/ConvolveFilter.jpg),ConvolveFilter, 일반 컨볼루션
+![DespeckleFilter](../images/DespeckleFilter.jpg),DespeckleFilter, 이미지 얼룩 제거
+![GaussianFilter](../images/GaussianFilter.jpg),GaussianFilter, 가우시안 블러
+![GlowFilter](../images/GlowFilter.jpg),GlowFilter, 이미지에 광선 추가
+![HighPassFilter](../images/HighPassFilter.jpg),HighPassFilter, 낮은 공간 주파수 제거
+![LensBlurFilter](../images/LensBlurFilter.jpg),LensBlurFilter, 카메라 렌즈 흐림 시뮬레이션
+![MaximumFilter](../images/MaximumFilter.jpg),MaximumFilter, 팽창
+![MedianFilter](../images/MedianFilter.jpg),MedianFilter, 노이즈 감소를 위한 중앙값 필터
+,최소 필터, 침식
+![MotionBlurFilter](../images/MotionBlurFilter.jpg),MotionBlurFilter, 모션 블러 시뮬레이션
+![OilFilter](../images/OilFilter.jpg),OilFilter, 유화 효과
+![RaysFilter](../images/RaysFilter.jpg),RaysFilter, 광선 생성
+![ReduceNoiseFilter](../images/ReduceNoiseFilter.jpg),ReduceNoiseFilter, 이미지에서 노이즈 제거
+![SharpenFilter](../images/SharpenFilter.jpg),SharpenFilter, 간단한 선명화
+![SmartBlurFilter](../images/SmartBlurFilter.jpg),SmartBlurFilter, 주름을 펴기 위한 임계값 흐림
+![UnsharpFilter](../images/UnsharpFilter.jpg),UnsharpFilter, 언샵 마스킹으로 선명하게 하기
+![VariableBlurFilter](../images/VariableBlurFilter.jpg),VariableBlurFilter, 마스크에서 가져온 가변 반경을 사용한 블러링
+,가장자리 감지,
+![DoGFilter](../images/DoGFilter.jpg),DoGFilter, 가우시안 차이를 통한 가장자리 감지
+![EdgeFilter](../images/EdgeFilter.jpg),EdgeFilter, 가장자리 감지
+![LaplaceFilter](../images/LaplaceFilter.jpg),LaplaceFilter, Laplace 연산자에 의한 가장자리 감지
+,전환,
+![BlurTransition](../images/BlurTransition.jpg),BlurTransition, 흐림 효과가 있는 전환
+![GradientWipeFilter](../images/GradientWipeFilter.jpg),GradientWipeFilter, 마스크를 사용하여 한 이미지를 다른 이미지로 디졸브
+![알파 채널 필터](../images/알파 채널 필터.jpg),알파 채널 필터,
+![OpacityFilter](../images/OpacityFilter.jpg),OpacityFilter, 이미지 불투명도 변경
+![PremultiplyFilter](../images/PremultiplyFilter.jpg),PremultiplyFilter, 이미지를 미리 곱하기
+![UnpremultiplyFilter](../images/UnpremultiplyFilter.jpg),UnpremultiplyFilter, 이미지의 사전 곱셈 해제
+,기타 필터,
+![CompoundFilter](../images/CompoundFilter.jpg),CompoundFilter, 두 개의 필터를 순서대로 적용합니다.
+![IteratedFilter](../images/IteratedFilter.jpg),IteratedFilter, 다른 필터 반복

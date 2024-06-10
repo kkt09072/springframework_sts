@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sample">
+	<select id="getSampleList" resultType="com.spring1.dto.Sample">
+		select * from sample order by res desc
+	</select>	
+	<select id="getSample" resultType="com.spring1.dto.Sample">
+		select * from sample where num=#{num}
+	</select>
+	<select id="maxNum" resultType="int">
+		select num from (select * from sample order by num desc) where rownum=1
+	</select>
+	<!--  최근 마지막 번호(MySQL/MariaDB/PostGres) : select num from sample order by num desc limit 1; -->
+	<insert id="insSample">
+		insert into sample values (#{num}, #{title}, default)
+	</insert>
+	<update id="upSample">
+		update sample set title=#{title} where num=#{num}
+	</update>
+	<delete id="delSample">
+		delete from sample where num=#{num}
+	</delete>
+</mapper>

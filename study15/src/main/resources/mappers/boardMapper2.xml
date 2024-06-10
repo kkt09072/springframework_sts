@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board2">
+	<select id="getBoardList" resultType="com.spring1.dto.Board">
+		select * from board order by resdate desc
+	</select>	
+	<select id="getBoard" resultType="com.spring1.dto.Board">
+		select * from board where bno=#{bno, javaType=int, jdbcType=INTEGER}
+	</select>
+	<select id="maxNum" resultType="int">
+		select bno from (select * from board order by bno desc) where rownum=1
+	</select>
+	<insert id="insBoard" parameterType="com.spring1.dto.Board">
+		insert into board values (#{bno}, #{title}, #{content}, #{author}, 
+		default, default)
+	</insert>
+	<update id="upBoard" parameterType="com.spring1.dto.Board">
+		update board set title=#{title}, content=#{content} where bno=#{bno}
+	</update>
+	<delete id="delBoard">
+		delete from board where bno=#{bno}
+	</delete>
+	<!--
+	 id : 해당 태그의 아이디
+	 parameterType : 입력 변수 또는 클래스 지정
+	 resultType :  출력 변수 또는 클래스 지정
+	 ${변수또는객체} : 변수 또는 객체를 지정
+	 #{컬럼명또는속성명 [, javaType=타입, jdbcType=타입]} : 
+	 	컬럼명 또는 속성명 지정하며, 옵션은 자바와 데이터베이스의 데이터 타입이 다를 경우 사용함.
+	 기본 태그 : select, insert, update, delete, sql, include, property
+	 	select : 레코드 검색시 사용
+	 	insert : 레코드 추가시 사용
+	 	update : 레코드 변경시 사용
+	 	delete : 레코드 삭제시 사용
+	 	sql : 반복 사용되는 sql 구문을 하나의 구문으로 등록하여 중복 태그부분을 제거할 때 사용 
+	 	include : sql 태그로 추가한 내용을 삽입할 때 활용
+	 	property : 각 컬럼의 값을 지정할 때 활용
+	 동적SQL(조건문 및 반복문과 기타 태그) : if, choose, when, otherwise, trim, where, set
+	 	foreach, bind, selectKey
+	 		
+	 -->
+	<!-- sql+include 태그 사용 예시 -->
+	<sql id="boardCol">
+		bno, title, content, author, vcnt, resdate
+	</sql>
+	<select id="getBoardList2" resultType="com.spring1.dto.Board">
+		select <include refid="boardCol" /> from board
+	</select>
+	<!-- property 태그 사용 예시 -->
+	<!--
+	<insert id="insBoard2">
+		<property name="bno" value="101" />
+		<property name="title" value="예시제목 101" />
+		<property name="content" value="예시콘텐츠 101" />
+		<property name="author" value="admin" />
+		insert into board(bno, title, content, author) values (#{bno}, #{title}, #{content}, #{author})
+	</insert> -->
+	<!-- if 태그 사용 예시 -->
+	<select id="getBoardList3" parameterType="com.spring1.dto.BoardVO" resultType="com.spring1.dto.Board">
+		select * from board where 
+		<if test="searchType.equals('title')">
+			title like '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType.equals('content')">
+			content like '%' || #{keyword} || '%' 
+		</if>
+		<if test="searchType.equals('author')">
+			author = #{keyword} 
+		</if>
+		<if test="searchType.equals('other')">
+			(title like '%' || #{keyword} || '%') or (content like '%' || #{keyword} || '%')
+		</if>
+		order by resdate desc
+	</select>
+	<!-- choose+when+otherwise 태그 사용 예시 -->
+	<select id="getBoardList4" parameterType="com.spring1.dto.BoardVO" resultType="com.spring1.dto.Board">
+		select * from board where
+		<choose> 
+			<when test="searchType =='title'">
+				title like '%' || #{keyword} || '%'
+			</when>
+			<when test="searchType == 'content'">
+				content like '%' || #{keyword} || '%' 
+			</when>
+			<when test="searchType == 'author'">
+				author = #{keyword} 
+			</when>
+			<otherwise>
+				(title like '%' || #{keyword} || '%') or (content like '%' || #{keyword} || '%')
+			</otherwise>
+		</choose>
+		order by resdate desc
+	</select>
+	<!-- select+where+if 태그 사용 예시 -->
+	<select id="getBoardList5" resultType="com.spring1.dto.Board">
+		select * from board 
+		<where> 
+			<if test="searchType.equals('title')">
+				title like '%' || #{keyword} || '%'
+			</if>
+			<if test="searchType.equals('content')">
+				content like '%' || #{keyword} || '%' 
+			</if>
+			<if test="searchType.equals('author')">
+				author = #{keyword} 
+			</if>
+			<if test="searchType.equals('other')">
+				(title like '%' || #{keyword} || '%') or (content like '%' || #{keyword} || '%')
+			</if>
+		</where>
+		order by resdate desc
+	</select>
+	<!-- sql+include+if 태그 사용 예시 -->
+	<select id="getBoardList6" resultType="com.spring1.dto.Board">
+		select * from board where 
+		<include refid="whereCondition" />
+		order by resdate desc
+	</select>	
+	<sql id="whereCondition">
+		<if test="searchType.equals('title')">
+			title like '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType.equals('content')">
+			content like '%' || #{keyword} || '%' 
+		</if>
+		<if test="searchType.equals('author')">
+			author = #{keyword} 
+		</if>
+		<if test="searchType.equals('other')">
+			(title like '%' || #{keyword} || '%') or (content like '%' || #{keyword} || '%')
+		</if>
+	</sql>
+	<!-- set의 예제 -->
+	<update id="upBoard2">
+		update board 
+		<set>
+			<if test="updateType.equals('title')">
+				title=#{title}
+			</if>
+			<if test="updateType.equals('content')">
+				content=#{content}
+			</if>
+			<if test="updateType.equals('other')">
+				title=#{title}, content=#{content}
+			</if>
+		</set>
+		where bno=#{bno}
+	</update>
+	<!-- foreach 의 예제 -->
+	<insert id="insBoard2">
+		insert into board (bno, title, content, author) values
+		<foreach collection="boardList" item="board" separator=", "> 
+		#{board.bno}, #{board.title}, #{board.content}, #{board.author}
+		</foreach>
+	</insert>
+	<!-- bind 태그 예시 -->
+	<select id="getBoard3" parameterType="Integer" resultType="com.spring1.dto.Board">
+		<bind name="pattern" value="5" />
+		select * from board where 
+		bno = #{pattern}
+	</select>
+	<!-- bind 태그 예시 -->
+	<select id="getBoard4" parameterType="String" resultType="com.spring1.dto.Board">
+		<bind name="pattern" value="'%' + keyword + '%'" />
+		select * from board where 
+		title like #{pattern}
+	</select>
+</mapper>

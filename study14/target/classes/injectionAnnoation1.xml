@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- autowired 어노테이션으로 주입시 객체 이름으로 찾아 주입  -->
+	<bean id="obj1" class="com.spring1.test.InjectionAnnotation1" autowire="byName" />
+	<bean id="storeBean1" class="com.spring1.dto.Store" />
+	<bean id="storeBean2" class="com.spring1.dto.Store" />
+	
+	<!-- autowired 어노테이션으로 주입시 객체 타입으로 찾아 주입  -->
+	<bean id="obj2" class="com.spring1.test.InjectionAnnotation2" autowire="byType" />
+	<bean id="shopBean1" class="com.spring1.dto.Shop" />	
+	
+	<!-- autowired 어노테이션으로 주입시 생성자로 찾아 주입  -->
+	<bean id="marketBean1" class="com.spring1.dto.Market" />
+	<bean id="obj3" class="com.spring1.test.InjectionAnnotation3" autowire="constructor" />
+	
+	<!-- autowired 어노테이션으로 주입시 생성자로 찾아 주입  -->
+	<bean id="obj4" class="com.spring1.test.InjectionAnnotation4" autowire="constructor">
+		<constructor-arg value="1000" index="0" type="int" />
+		<constructor-arg value="문자열데이터" index="1" />
+	</bean>
+		
+    <context:annotation-config/>
+</beans>

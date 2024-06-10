@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- 모든 서블릿과 필터가 공유하는 루트 스프링 컨테이너의 정의 : 외부 자원에 대한 환경 설정 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- 모든 서블릿과 필터가 공유하는 Spring 컨테이너를 생성합니다. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 요청 처리 서블릿 설정 : 접근 권한 설정, 리소스 경로 설정-->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				/WEB-INF/spring/appServlet/servlet-context.xml
+				/WEB-INF/spring/spring-security.xml
+				<!-- /WEB-INF/spring/aop-context.xml -->
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+    <!-- 한글깨짐 방지 --> 
+    <filter> 
+        <filter-name>encodingFilter</filter-name> 
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param> 
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <!-- PUT, PATCH, DELETE 방식의 메소드를 지원하지 않는 브라우저가 있을 경우 Spring에서 PUT, PATCH, DELETE 를 지원하는 필터 -->
+   	<filter>
+		<filter-name>httpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<!-- 필터 기능 탑재 -->
+	<filter>
+		<filter-name>loginCheckFilter</filter-name>
+		<filter-class>com.spring1.filter.LoginCheckFilter</filter-class>
+	</filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	<filter-mapping>
+		<filter-name>httpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>loginCheckFilter</filter-name>
+		<url-pattern>/board/*</url-pattern>
+	</filter-mapping>	
+	    
+</web-app>

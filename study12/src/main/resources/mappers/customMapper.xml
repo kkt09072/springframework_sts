@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="custom">
+	<select id="getCustomList" resultType="com.spring1.dto.Custom">
+		select * from custom order by resdate desc
+	</select>	
+	<select id="getCustom" resultType="com.spring1.dto.Custom">
+		select * from custom where id=#{id}
+	</select>
+	<select id="maxNum" resultType="int">
+		select count(*) from custom
+	</select>
+	<insert id="insCustom">
+		insert into custom values (#{id}, #{pw}, #{name}, #{email}, #{tel}, 
+		#{addr}, #{postcode}, default)
+	</insert>
+	<update id="changePw">
+		update custom set pw=#{pw} where id=#{id}
+	</update>
+	<update id="changeInfo">
+		update custom set name=#{name}, email=#{email}, tel=#{tel}, 
+		addr=#{addr}, postcode=#{postcode} where id=#{id}
+	</update>
+	<delete id="delCustom">
+		delete from custom where id=#{id}
+	</delete>
+</mapper>
